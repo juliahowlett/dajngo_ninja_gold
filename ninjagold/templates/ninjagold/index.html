@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <meta charset="utf-8">
+		<title>Ninja Gold</title>
+		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		{% load staticfiles %}
+	    <link rel="stylesheet" href="{% static 'ninjagold/style.css' %}">
+	</head>
+	<body>
+		<h2>Ninja Gold</h2>
+        {% if total %}
+            <h4 id='totalgold'>Your Gold:  {{ total }} </h4> 
+        {% else %}
+            <h4 id='totalgold'>Your Gold: 0 </h4>
+        {% endif %}
+		<div class="farm">
+            <h1>Farm</h1>
+            <h4>digs up 10-20 golds</h4> 
+            <br><br>
+            <form action="/process_money" method="post">
+			{% csrf_token %}
+                <input type="hidden" name="location" value="farm" />
+                <input type="submit" value="Find Gold!"/>
+            </form>       
+		</div>
+        <div class="cave">
+            <h1>Cave</h1>
+            <h4>discovers 5-10 gold coins</h4> 
+            <br><br>
+            <form action="/process_money" method="post">
+			{% csrf_token %}
+                <input type="hidden" name="location" value="cave" />
+                <input type="submit" value="Find Gold!"/>
+            </form>       
+		</div>
+        <div class="house">
+            <h1>House</h1>
+            <h4>earns 2-5 gold coins</h4>
+            <br><br>
+            <form action="/process_money" method="post">
+			{% csrf_token %}
+                <input type="hidden" name="location" value="house" />
+                <input type="submit" value="Find Gold!"/>
+            </form>       
+		</div>
+        <div class="casino">
+            <h1>Casino</h1>
+            <h4>wins OR loses 0-50 gold coins</h4> 
+            <br><br>
+            <form action="/process_money" method="post">
+			{% csrf_token %}
+                <input type="hidden" name="location" value="casino" />
+                <input type="submit" value="Find Gold!"/>
+            </form>       
+		</div>
+	<p>Activity:</p>
+	<ul>
+	{% for log in logs %}
+	<p>{{log}}</p>
+	{% endfor %}
+	</ul>
+  </body>
+</html>
+

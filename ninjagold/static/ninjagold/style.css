@@ -1,0 +1,41 @@
+*{
+ margin: 0px;
+}
+body{
+	display: inline-block;
+	text-align: center;
+    background-color: azure;
+}
+div {
+    display: inline-block;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-style: solid;
+    border-width: wide;
+    border-color: black;
+}
+.farm {
+    height: 150px; 
+	width: 250px;
+    background-color: lightgreen;
+}
+.cave {
+    height: 150px; 
+	width: 250px;
+    background-color: lightgrey;
+} 
+.casino {
+    height: 150px; 
+	width: 250px;
+    background-color: lightyellow;
+} 
+.house {
+    height: 150px; 
+	width: 250px;
+    background-color: lightblue;	
+}
+.activity {
+    height: 250px;
+	width: 400px;
+    background-color: white;       
+}
