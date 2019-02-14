@@ -1,2 +1,2 @@
-# dajngo_ninja_gold
+# django_ninja_gold
 Django Ninja Gold Assignment
